@@ -17,47 +17,47 @@ export class DataComponent implements OnInit {
         query: gql`
           {
             graphQLHub
-            reddit {
-              user(username: "kn0thing") {
-                username
-                commentKarma
-                createdISO
+            twitter {
+              user (identifier: name, identity: "Tallwave") {
+                created_at
+                description
+                id
+                screen_name
+                name
+                profile_image_url
+                url
+                tweets_count
+                followers_count
+                tweets(limit: 1) {
+                  text
+                }
               }
-              subreddit(name: "movies"){
-                newListings(limit: 2) {
-                  title
-                  comments {
-                    body
-                    author {
-                      username
-                      commentKarma
-                    }
+              tweet(id: "687433440774459392") {
+                text,
+                retweets(limit: 2) {
+                  id,
+                  retweeted_status {
+                    id
+                  }
+                  user {
+                    screen_name
                   }
                 }
+              }
+              search(q: "facebook", count: 1, result_type: mixed) {
+                user {
+                  screen_name
+                }
+                id
+                text
               }
             }
           }
         `,
       })
       .subscribe(console.log);
-    // apollo
-    //   .query({
-    //     query: gql `{
-    //     business(id: "garaje-san-francisco") {
-    //         name
-    //         id
-    //         alias
-    //         rating
-    //         url
-    //     }
-    // }`
-    //   })
-    //    .subscribe(console.log);
    }
 
   ngOnInit() {
-    this.http.get('https://api.publicapis.org/entries?category=animals&https=true').subscribe(heroes => {
-      console.log('random API', heroes);
-    });
   }
 }
