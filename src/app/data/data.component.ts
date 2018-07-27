@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
-
   constructor(apollo: Apollo, private http: HttpClient) {
     apollo
       .query({
@@ -18,33 +17,7 @@ export class DataComponent implements OnInit {
           {
             graphQLHub
             twitter {
-              user (identifier: name, identity: "Tallwave") {
-                created_at
-                description
-                id
-                screen_name
-                name
-                profile_image_url
-                url
-                tweets_count
-                followers_count
-                tweets(limit: 1) {
-                  text
-                }
-              }
-              tweet(id: "687433440774459392") {
-                text,
-                retweets(limit: 2) {
-                  id,
-                  retweeted_status {
-                    id
-                  }
-                  user {
-                    screen_name
-                  }
-                }
-              }
-              search(q: "facebook", count: 1, result_type: mixed) {
+              search(q: "facebook", count: 5, result_type: mixed) {
                 user {
                   screen_name
                 }

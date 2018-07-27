@@ -35,28 +35,5 @@ export class AppModule {
       link: httpLink.create({uri: 'https://www.graphqlhub.com/graphql'}),
       cache: new InMemoryCache(),
     });
-    // const http = httpLink.create({uri: 'https://api.yelp.com/v3/graphql', withCredentials: true });
-
-    // const auth = setContext((_, { headers }) => {
-    //   // get the authentication token from local storage if it exists
-    //   const token = `6-ElaghQB3p3tVB2jHqkusagt7opUJnC2HamPrsp2QBG3AUDYPYuGS1xzP6xu2J7Hka2ge4Ab1sHluTpFEgRWkjOMlcZ_YtLUBCoIbDAEfhASTkQkdbwbrrXLRlZW3Yx`;
-    //   // return the headers to the context so httpLink can read them
-    //   // in this example we assume headers property exists
-    //   // and it is an instance of HttpHeaders
-    //   if (!token) {
-    //     return {};
-    //   } else {
-    //     return {
-    //         headers: {
-    //             Authorization: `Bearer ${token}`
-    //         }
-    //     };
-    //   }
-    // });
-
-    // apollo.create({
-    //   link: auth.concat(http),
-    //   cache: new InMemoryCache(),
-    // });
   }
  }
