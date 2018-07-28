@@ -1,3 +1,8 @@
-<p>
-  data works!
-</p>
+  
+<input id="search-box" type="text" [(ngModel)]="searchText" (ngModelChange)="executeSearch()" /> 
+<ul class="tweet list">
+    <li *ngFor="let tweet of tweets" >
+      user: {{ tweet.user.screen_name}}  
+      {{tweet.text}}
+    </li>
+  </ul>
