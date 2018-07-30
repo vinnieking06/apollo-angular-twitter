@@ -27,12 +27,10 @@ const searchQuery = gql`
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
-  // tweets: <any[]>;
   tweets = [];
   searchText = '';
   subscriptions: Subscription[] = [];
   executeSearch() {
-    console.log('this', this.searchText)
     if (!this.searchText) {
       return;
     }
@@ -42,7 +40,6 @@ export class DataComponent implements OnInit {
         term: this.searchText
       },
     }).valueChanges.subscribe((response) => {
-      console.log('resp', response);
       this.tweets = response.data.twitter.search;
     });
 
