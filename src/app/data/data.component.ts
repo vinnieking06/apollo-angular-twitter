@@ -40,7 +40,7 @@ export class DataComponent implements OnInit {
         term: this.searchText
       },
     }).valueChanges.subscribe((response) => {
-      this.tweets = response.data.twitter.search;
+      this.tweets = response.data['twitter'].search;
     });
 
     this.subscriptions = [...this.subscriptions, querySubscription];
