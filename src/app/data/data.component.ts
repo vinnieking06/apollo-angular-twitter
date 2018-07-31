@@ -11,7 +11,7 @@ const searchQuery = gql`
           query searchQuery($term: String!){
             graphQLHub
             twitter {
-              search(q: $term, count: 5, result_type: mixed) {
+              search(q: $term, count: 10, result_type: mixed) {
                 user {
                   screen_name
                 }
@@ -27,8 +27,8 @@ const searchQuery = gql`
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
-  tweets = [];
-  searchText = '';
+  tweets: Tweet[] = [];
+  searchText: string = '';
   subscriptions: Subscription[] = [];
   executeSearch() {
     if (!this.searchText) {
