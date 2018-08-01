@@ -27,7 +27,7 @@ export class DataComponent implements OnInit {
     this.subscriptions = [...this.subscriptions, querySubscription];
   }
   constructor(private tweetService: TweetsService) {
-   }
+  }
 
   ngOnInit() {
 
