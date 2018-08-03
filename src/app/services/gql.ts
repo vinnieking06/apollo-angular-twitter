@@ -6,6 +6,7 @@ export const searchQuery = gql`
               search(q: $term, count: 10, result_type: mixed) {
                 user {
                   screen_name
+                  profile_image_url
                 }
                 id
                 text

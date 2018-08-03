@@ -1,0 +1,10 @@
+.tweet-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+

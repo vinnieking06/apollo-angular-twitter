@@ -12,6 +12,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 
 import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DataComponent } from './data/data.component';
     HttpClientModule, // provides HttpClient for HttpLink
     ApolloModule,
     HttpLinkModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
