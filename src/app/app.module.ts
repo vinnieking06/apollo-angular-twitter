@@ -12,7 +12,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 
 import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [

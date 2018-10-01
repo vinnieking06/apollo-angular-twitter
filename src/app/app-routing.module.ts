@@ -5,8 +5,8 @@ import { DataComponent } from './data/data.component';
 
 const routes: Routes = [
   { path: '',
-    redirectTo: '/tweets',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    redirectTo: '/tweets'
   },
   {path: 'tweets', component: DataComponent }
 ];
