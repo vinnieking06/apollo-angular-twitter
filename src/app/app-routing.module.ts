@@ -4,6 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataComponent } from './data/data.component';
 
 const routes: Routes = [
+  { path: '',
+    pathMatch: 'full',
+    redirectTo: '/tweets'
+  },
   {path: 'tweets', component: DataComponent }
 ];
 
